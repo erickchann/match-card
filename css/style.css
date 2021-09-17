@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.board {
+    width: 500px;
+    height: 500px;
+    background-image: url('../images/table.jpg');
+    border-radius: 5px;
+    padding: 55px;
+}
+
+.cards {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    transition: .5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.card:hover {
+    box-shadow: 0 0 5px white;
+}
+
+.card .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/deck.png');
+    background-position: 0 120px;
+    transform: translateZ(1px);
+}
+
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/deck.png');
+    transform: translateZ(-1px) rotateY(180deg);
+}
+
+.card.rotate {
+    transform: rotateY(180deg);
+}
+
+.card.rotate.remove {
+    transform: rotateY(0);
+    opacity: 0;
+}
+
+.cardAK {
+    background-position: calc(80px * -12) -120px;
+}
+
+.cardAQ {
+    background-position: calc(80px * -11) -120px;
+}
+
+.cardAJ {
+    background-position: calc(80px * -10) -120px;
+}
+
+.cardBK {
+    background-position: calc(80px * -12) 0;
+}
+
+.cardBQ {
+    background-position: calc(80px * -11) 0;
+}
+
+.cardBJ {
+    background-position: calc(80px * -10) 0;
+}
